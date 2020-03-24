@@ -2,20 +2,18 @@ const getState = ({getStore, getActions, setStore}) => {
     return {
         store: {
             name: '',
-            films: {}
+            gender: ''
         },
         actions: {
             setName: e => {
-                setStore({
-                    name: e.target.value
-                })
+   
             },
-            getFilms: url => {
+            getPeople: url => {
                 fetch(url)
                     .then(resp => resp.json())
                     .then(data => {
                         setStore({
-                            films: data
+                            people: data
                         })
                     });
             }
