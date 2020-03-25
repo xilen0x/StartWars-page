@@ -1,21 +1,64 @@
-const getState = ({getStore, getActions, setStore}) => {
+const getState = ({ getStore, getActions, setStore }) => {
     return {
         store: {
-            name: '',
-            gender: ''
+            people: null,
+            planets: null,
+            vehicles: null
         },
         actions: {
-            setName: e => {
-   
-            },
             getPeople: url => {
-                fetch(url)
+                fetch(url, {
+                    method: 'GET',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                })
                     .then(resp => resp.json())
                     .then(data => {
+                        console.log(data);
                         setStore({
                             people: data
-                        })
-                    });
+                        });
+                    })
+                    .catch(error => {
+                        console.log(error)
+                    })
+            },
+            getPlanets: url => {
+                fetch(url, {
+                    method: 'GET',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                })
+                    .then(resp => resp.json())
+                    .then(data => {
+                        console.log(data);
+                        setStore({
+                            planets: data
+                        });
+                    })
+                    .catch(error => {
+                        console.log(error)
+                    })
+            },
+            getVehicles: url => {
+                fetch(url, {
+                    method: 'GET',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                })
+                    .then(resp => resp.json())
+                    .then(data => {
+                        console.log(data);
+                        setStore({
+                            vehicles: data
+                        });
+                    })
+                    .catch(error => {
+                        console.log(error)
+                    })
             }
         }
     }

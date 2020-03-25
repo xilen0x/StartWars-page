@@ -1,28 +1,30 @@
-import React, { useContext } from 'react';
-import { Context } from '../store/appContext';
+import React from 'react';
+import People from './people.jsx'
+import Vehicles from './vehicles.jsx';
+import Planets from './planets.jsx';
+
+
 
 const Home = props => {
-    const { store, actions } = useContext(Context);
-    const { name } = store;
-    console.log(store.people);
+
     return (
         <>
-            <div className="container">
-                <div className="row">
-                    <div className="col">
-                        {
-                            store.people != null ?
-                                (
-                                    <div className="mt-5"><h1>cuerpo</h1></div>
-                                ) : (
-                                    <div className="spinner-grow" role="status">
-                                        <span className="sr-only">Loading...</span>
-                                    </div>
-                                )
-                        }
+            <div id="carouselExampleControls" className="carousel slide" data-ride="carousel">
+                <div className="carousel-inner">
+                    <div className="carousel-item active">
+                        <img src="../img/sw1.jpg" className="d-block w-100" alt="" />
+                    </div>
+                    <div className="carousel-item">
+                        <img src="../img/sw2.png" className="d-block w-100" alt="" />
+                    </div>
+                    <div className="carousel-item">
+                        <img src="../img/sw3.jpg" className="d-block w-100" alt="" />
                     </div>
                 </div>
             </div>
+            <People/>
+            <Vehicles/>
+            <Planets/>
         </>
     )
 }

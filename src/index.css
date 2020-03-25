@@ -2,3 +2,7 @@ body{
     background-image: url('./img/universe.jpg');
     color: white;
 }
+
+h5, p{
+    color: #000;
+}

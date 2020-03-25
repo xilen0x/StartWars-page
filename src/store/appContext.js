@@ -19,7 +19,10 @@ const injectContext = PassedComponent => {
         }
 
         componentDidMount(){
-            this.state.actions.getPeople('https://swapi.co/api/people');
+           
+            this.state.actions.getVehicles('https://swapi.co/api/vehicles');
+            this.state.actions.getPlanets('https://swapi.co/api/planets'); 
+            this.state.actions.getPeople('https://swapi.co/api/people/');
         }
 
         render(){
