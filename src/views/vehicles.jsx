@@ -33,7 +33,7 @@ const Vehicles = props => {
                             })
                             : (
                                 <div className="col-md-12 text-center">
-                                    <div className="spinner-grow" role="status">
+                                    <div className="spinner-grow text-light" role="status">
                                         <span className="sr-only">Loading...</span>
                                     </div>
                                 </div>
